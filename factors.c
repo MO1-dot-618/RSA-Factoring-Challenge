@@ -48,12 +48,7 @@ int factorize(char *buffer)
 	long long int num, i;
 
 	num = atoll(buffer);
-	if (num % 2 == 0)
-	{
-		printf("%lli=%lli*2\n", num, num / i);
-		return (0);
-	}
-	for (i = 3; i * i < num; i = i + 2)
+	for (i = 2; i < num / 2 + 1; i++)
 	{
 		if (num % i == 0)
 		{
@@ -105,13 +100,7 @@ int factorize_big(__int128 num)
 {
 	__int128 i;
 
-	if (num % 2 == 0)
-	{
-		print128(num); printf("=");
-		print128(num / i); printf("*2\n");
-		return(0);
-	}
-	for (i = 3; i * i < num; i = i + 2)
+	for (i = 2; i < (num / 2 + 1); i++)
 	{
 		if (num % i == 0)
 		{
