@@ -10,9 +10,11 @@ def factorize(value):
         print("{:d}={:d}*2".format(value, value // 2))
         return
     i = 3
-    while value % i:
+    a = divmod(value, i)
+    while a[1]:
         i += 2
-    print("{:d}={:d}*{:d}".format(value, value // i, i))
+        a = divmod(value, i)
+    print("{:d}={:d}*{:d}".format(value, a[0], i))
 
 if len(argv) != 2:
     print("Usage: factors <file>")
